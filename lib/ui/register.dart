@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:learn_flutter/ui/home.dart';
 
 class RegisterPage extends StatefulWidget {
   RegisterPage({Key? key}) : super(key: key);
@@ -8,7 +9,6 @@ class RegisterPage extends StatefulWidget {
 }
 
 class _RegisterPageState extends State<RegisterPage> {
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -53,6 +53,132 @@ class _RegisterPageState extends State<RegisterPage> {
                         child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
+                        Row(
+                          children: [
+                            Expanded(
+                              child: Column(
+                                children: [
+                                  Align(
+                                    alignment: Alignment.centerLeft,
+                                    child: Text(
+                                      'Nama Depan',
+                                      style: TextStyle(
+                                          fontSize: 16,
+                                          color: Color(0xff002060),
+                                          fontWeight: FontWeight.w600),
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    height: 8,
+                                  ),
+                                  Container(
+                                    decoration: BoxDecoration(
+                                      boxShadow: [
+                                        BoxShadow(
+                                          color: Color(0xffBEBEBE)
+                                              .withOpacity(0.16),
+                                          blurRadius: 10,
+                                          offset: const Offset(0, 10),
+                                        ),
+                                      ],
+                                    ),
+                                    child: TextFormField(
+                                      keyboardType: TextInputType.text,
+                                      decoration: InputDecoration(
+                                          fillColor: Colors.white,
+                                          filled: true,
+                                          focusedBorder: OutlineInputBorder(
+                                            borderSide: BorderSide(
+                                              color: Colors.transparent,
+                                              width: 0.0,
+                                            ),
+                                            borderRadius:
+                                                BorderRadius.circular(10),
+                                          ),
+                                          enabledBorder: OutlineInputBorder(
+                                            borderRadius:
+                                                BorderRadius.circular(10),
+                                            borderSide: BorderSide(
+                                              color: Colors.transparent,
+                                              width: 0.0,
+                                            ),
+                                          ),
+                                          hintText: "Jhon",
+                                          hintStyle: TextStyle(
+                                              fontSize: 14,
+                                              color: Color(0xff5F5F5F))),
+                                      cursorColor: Colors.blueGrey,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            SizedBox(
+                              width: 16,
+                            ),
+                            Expanded(
+                              child: Column(
+                                children: [
+                                  Align(
+                                    alignment: Alignment.centerLeft,
+                                    child: Text(
+                                      'Nama Belakang',
+                                      style: TextStyle(
+                                          fontSize: 16,
+                                          color: Color(0xff002060),
+                                          fontWeight: FontWeight.w600),
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    height: 8,
+                                  ),
+                                  Container(
+                                    decoration: BoxDecoration(
+                                      boxShadow: [
+                                        BoxShadow(
+                                          color: Color(0xffBEBEBE)
+                                              .withOpacity(0.16),
+                                          blurRadius: 10,
+                                          offset: const Offset(0, 10),
+                                        ),
+                                      ],
+                                    ),
+                                    child: TextFormField(
+                                      keyboardType: TextInputType.text,
+                                      decoration: InputDecoration(
+                                          fillColor: Colors.white,
+                                          filled: true,
+                                          focusedBorder: OutlineInputBorder(
+                                            borderSide: BorderSide(
+                                              color: Colors.transparent,
+                                              width: 0.0,
+                                            ),
+                                            borderRadius:
+                                                BorderRadius.circular(10),
+                                          ),
+                                          enabledBorder: OutlineInputBorder(
+                                            borderRadius:
+                                                BorderRadius.circular(10),
+                                            borderSide: BorderSide(
+                                              color: Colors.transparent,
+                                              width: 0.0,
+                                            ),
+                                          ),
+                                          hintText: "Doe",
+                                          hintStyle: TextStyle(
+                                              fontSize: 14,
+                                              color: Color(0xff5F5F5F))),
+                                      cursorColor: Colors.blueGrey,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            )
+                          ],
+                        ),
+                        SizedBox(
+                          height: 16,
+                        ),
                         Text(
                           'No. KTP',
                           style: TextStyle(
@@ -241,9 +367,8 @@ class _RegisterPageState extends State<RegisterPage> {
                         ),
                         GestureDetector(
                           onTap: () {
-                            // Navigator.of(context).pushReplacement(
-                            //     MaterialPageRoute(
-                            //         builder: (context) => SignUpPage()));
+                            Navigator.of(context).push(MaterialPageRoute(
+                                builder: (context) => HomePage()));
                           },
                           child: Container(
                             padding: EdgeInsets.only(left: 16, right: 16),
@@ -264,24 +389,27 @@ class _RegisterPageState extends State<RegisterPage> {
                               children: [
                                 Expanded(child: SizedBox()),
                                 Expanded(
-                                    child: Center(
-                                  child: Text(
-                                    'Register',
-                                    style: TextStyle(
-                                        fontFamily: 'Now Bold',
-                                        color: Colors.white,
-                                        fontSize: 18,
-                                        fontWeight: FontWeight.w600),
-                                  ),
-                                )),
-                                Expanded(
-                                    child: Align(
-                                        alignment: Alignment.centerRight,
-                                        child: Icon(
-                                          Icons.arrow_forward_rounded,
-                                          size: 24,
+                                  child: Center(
+                                    child: Text(
+                                      'Register',
+                                      style: TextStyle(
+                                          fontFamily: 'Now Bold',
                                           color: Colors.white,
-                                        )))
+                                          fontSize: 18,
+                                          fontWeight: FontWeight.w600),
+                                    ),
+                                  ),
+                                ),
+                                Expanded(
+                                  child: Align(
+                                    alignment: Alignment.centerRight,
+                                    child: Icon(
+                                      Icons.arrow_forward_rounded,
+                                      size: 24,
+                                      color: Colors.white,
+                                    ),
+                                  ),
+                                )
                               ],
                             ),
                           ),
@@ -297,12 +425,20 @@ class _RegisterPageState extends State<RegisterPage> {
                             SizedBox(
                               width: 8,
                             ),
-                            Text(
-                              'Login sekarang',
-                              style: TextStyle(
-                                  color: Color(0xff002060),
-                                  fontWeight: FontWeight.w600),
-                            )
+                            TextButton(
+                              onPressed: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => RegisterPage()));
+                              },
+                              child: Text(
+                                'Login sekarang',
+                                style: TextStyle(
+                                    color: Color(0xff002060),
+                                    fontWeight: FontWeight.w600),
+                              ),
+                            ),
                           ],
                         ),
                         SizedBox(

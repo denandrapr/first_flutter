@@ -10,7 +10,6 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -18,7 +17,7 @@ class _LoginPageState extends State<LoginPage> {
         child: SingleChildScrollView(
           child: Center(
             child: Container(
-              margin: EdgeInsets.only(top: 48 , left: 16),
+              margin: EdgeInsets.only(top: 48, left: 16),
               child: Column(
                 children: <Widget>[
                   Row(
@@ -124,27 +123,33 @@ class _LoginPageState extends State<LoginPage> {
                             ],
                           ),
                           child: TextFormField(
-                            keyboardType: TextInputType.text,
+                            keyboardType: TextInputType.visiblePassword,
+                            obscureText: true,
                             decoration: InputDecoration(
-                                fillColor: Colors.white,
-                                filled: true,
-                                focusedBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(
-                                    color: Colors.transparent,
-                                    width: 0.0,
-                                  ),
-                                  borderRadius: BorderRadius.circular(10),
+                              fillColor: Colors.white,
+                              filled: true,
+                              focusedBorder: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                  color: Colors.transparent,
+                                  width: 0.0,
                                 ),
-                                enabledBorder: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(10),
-                                  borderSide: BorderSide(
-                                    color: Colors.transparent,
-                                    width: 0.0,
-                                  ),
+                                borderRadius: BorderRadius.circular(10),
+                              ),
+                              enabledBorder: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(10),
+                                borderSide: BorderSide(
+                                  color: Colors.transparent,
+                                  width: 0.0,
                                 ),
-                                hintText: "Masukkan Password anda",
-                                hintStyle: TextStyle(
-                                    fontSize: 14, color: Color(0xff5F5F5F))),
+                              ),
+                              hintText: "Masukkan Password anda",
+                              hintStyle: TextStyle(
+                                  fontSize: 14, color: Color(0xff5F5F5F)),
+                              // prefixIcon: IconButton(
+                              //   onPressed: () {},
+                              //   icon: Icon(Icons.visibility)
+                              // ),
+                            ),
                             cursorColor: Colors.blueGrey,
                           ),
                         ),
@@ -153,9 +158,8 @@ class _LoginPageState extends State<LoginPage> {
                         ),
                         GestureDetector(
                           onTap: () {
-                            Navigator.of(context).pushReplacement(
-                                MaterialPageRoute(
-                                    builder: (context) => HomePage()));
+                            Navigator.of(context).push(MaterialPageRoute(
+                                builder: (context) => HomePage()));
                           },
                           child: Container(
                             padding: EdgeInsets.only(left: 16, right: 16),
@@ -210,19 +214,19 @@ class _LoginPageState extends State<LoginPage> {
                               width: 4,
                             ),
                             TextButton(
-                                onPressed: () {
-                                  Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                          builder: (context) =>
-                                              RegisterPage()));
-                                },
-                                child: Text(
-                                  'Daftar sekarang',
-                                  style: TextStyle(
-                                      color: Color(0xff002060),
-                                      fontWeight: FontWeight.w600),
-                                )),
+                              onPressed: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => RegisterPage()));
+                              },
+                              child: Text(
+                                'Daftar sekarang',
+                                style: TextStyle(
+                                    color: Color(0xff002060),
+                                    fontWeight: FontWeight.w600),
+                              ),
+                            ),
                           ],
                         ),
                         SizedBox(
