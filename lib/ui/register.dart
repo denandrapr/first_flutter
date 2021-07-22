@@ -446,6 +446,7 @@ class _RegisterPageState extends State<RegisterPage> {
                         ),
                         Container(
                           alignment: Alignment.center,
+                          margin: EdgeInsets.only(bottom: 16),
                           child: Text(
                             '© SILK. all right reserved.',
                             style: TextStyle(color: Color(0xffBEBEBE)),

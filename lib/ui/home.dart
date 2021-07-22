@@ -12,34 +12,66 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        iconTheme: IconThemeData(color: Color(0xff002060)),
+        actions: <Widget>[
+          IconButton(
+            color: Color(0xff002060),
+            icon: const Icon(Icons.shopping_cart),
+            tooltip: 'Shopping Cart',
+            onPressed: () {},
+          ),
+          IconButton(
+            color: Color(0xff002060),
+            icon: const Icon(Icons.notifications),
+            tooltip: 'Notif',
+            onPressed: () {},
+          ),
+        ],
+      ),
+      drawer: Drawer(
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: <Widget>[
+            Container(
+              margin: EdgeInsets.only(top: 64),
+              child: Row(
+                children: [
+                  Image.asset('assets/img/profile.png', width: 48,),
+                  SizedBox(
+                    width: 16,
+                  ),
+                  Column(
+                    children: [Text('Angga Praja'), Text('Membership BBLK')],
+                  )
+                ],
+              ),
+            ),
+            ListTile(
+              title: Text('Profile Saya'),
+              trailing: Icon(
+                Icons.arrow_forward_ios,
+                size: 16,
+              ),
+              onTap: () {},
+            ),
+            ListTile(
+              title: Text('Pengaturan'),
+              trailing: Icon(
+                Icons.arrow_forward_ios,
+                size: 16,
+              ),
+              onTap: () {},
+            ),
+          ],
+        ),
+      ),
       body: SafeArea(
         child: SingleChildScrollView(
           child: Column(
             children: <Widget>[
-              AppBar(
-                backgroundColor: Colors.transparent,
-                elevation: 0,
-                leading: IconButton(
-                  color: Color(0xff002060),
-                  icon: const Icon(Icons.menu),
-                  tooltip: 'Drawer',
-                  onPressed: () {},
-                ),
-                actions: <Widget>[
-                  IconButton(
-                    color: Color(0xff002060),
-                    icon: const Icon(Icons.shopping_cart),
-                    tooltip: 'Shopping Cart',
-                    onPressed: () {},
-                  ),
-                  IconButton(
-                    color: Color(0xff002060),
-                    icon: const Icon(Icons.notifications),
-                    tooltip: 'Notif',
-                    onPressed: () {},
-                  ),
-                ],
-              ),
               Stack(
                 children: <Widget>[
                   Container(
